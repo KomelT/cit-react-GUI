@@ -1,0 +1,231 @@
+@import "./colors.scss";
+
+.MainContent {
+	font-family: 'Nunito',
+		sans-serif;
+	background-color: $background-dark-color;
+	height: fit-content;
+	width: calc(100vw - 220px);
+	padding: 10px 5% 0 5%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+
+	.content {
+		display: flex;
+		width: 100%;
+		max-width: 1400px;
+		align-self: center;
+		align-items: center;
+		flex-direction: column;
+
+		p {
+			margin: 0;
+		}
+
+		.path {
+			font-size: 15px;
+			font-weight: 700;
+			color: $font-bright-color;
+			margin-bottom: 26px;
+			align-self: flex-start;
+		}
+
+		.welcome {
+			color: $font-bright-color;
+			font-size: 30px;
+			font-weight: 900;
+			align-self: flex-start;
+		}
+
+		.date {
+			font-size: 30px;
+			color: $font-bright-color;
+			font-weight: 500;
+			align-self: flex-start;
+		}
+
+		.hour {
+			font-size: 30px;
+			color: $font-bright-color;
+			font-weight: 500;
+			align-self: flex-start;
+		}
+
+		.bold {
+			font-weight: 900;
+		}
+
+		.workersCurrently {
+			margin-top: 95px;
+			padding: 0 20px;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			width: calc(100vw - 225px);
+			max-width: 1100px;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			.wcTextUpdate {
+				align-self: flex-end;
+				font-size: 10px;
+				font-weight: 400;
+				color: $font-bright-color;
+			}
+
+			.wcTextUpdate2 {
+				align-self: flex-end;
+				font-size: 12px;
+				font-weight: 800;
+				color: $font-bright-color;
+			}
+
+			.wcNodes {
+				width: 100%;
+				height: fit-content;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-wrap: wrap;
+
+				.wcNode {
+					margin: 5px 5px;
+					width: 230px;
+					height: 75px;
+					background-color: $background-red-color;
+					border-radius: 12px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: flex-end;
+					padding-right: 16px;
+
+					.wcNumber {
+						color: #3D3D3D;
+						font-size: 30px;
+						margin: 0;
+						font-weight: 900;
+					}
+
+					.wcText {
+
+						color: #3D3D3D;
+						font-size: 15px;
+						margin-top: -10px;
+						font-weight: 500;
+					}
+				}
+			}
+
+
+		}
+
+		.smallcalendarHeading{
+			align-self: flex-start;
+			color: $font-bright-color;
+			font-size: 25px;
+			font-weight: 600;
+			margin-top: 70px;
+			
+		}
+
+		.mcSmallCallendar{
+			padding: 0 20px;
+			margin-top: 50px;
+			display: flex;
+			align-items: flex-start;
+			width: calc(100vw - 225px);
+			max-width: 1100px;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		.dopustHeading{
+			align-self: flex-start;
+			color: $font-bright-color;
+			font-size: 25px;
+			font-weight: 600;
+			margin-top: 70px;
+		}
+
+		.dContiner{
+			display: flex;
+			flex-direction: column;
+			padding-left: 50px;
+			box-sizing: border-box;
+			align-self: flex-start;
+			color: $font-bright-color;
+			font-size: 20px;
+			font-weight: 400;
+			
+
+			.dGreen, .dRed{
+				display: inline;
+				font-weight: 800;
+			}
+
+			.dGreen{
+				color: $background-green-color;
+			}
+
+			.dRed{
+				color: $background-red-color;
+			}
+
+			.dWhenContainer{
+				display: flex;
+				flex-direction: column;
+				font-size: 15px;
+				font-weight: 400;
+				margin-top: 20px;
+							.dwLine {
+								height: 1px;
+								margin-top: 15px;
+								width: 100%;
+								background: $font-bright-color;
+
+							}
+							.dwSum{
+								align-self: flex-end;
+							}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.MainContent {
+		width: 100vw;
+
+		.welcome{
+			font-size: 25px !important;
+		}
+
+		.date{
+			font-size: 25px !important;
+		}
+
+		.hour{
+			font-size: 25px !important;
+		}
+	}
+
+	.workersCurrently {
+		width: calc(100vw) !important;
+		padding: 0 50px !important;
+	}
+
+	.smallcalendarHeading{
+		font-size: 18px !important;
+	}
+
+	.mcSmallCallendar{
+		width: 100vw !important;
+	}
+
+	.dopustHeading {
+		font-size: 18px !important;
+		margin-bottom: 20px !important;
+	}
+}

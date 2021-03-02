@@ -1,0 +1,94 @@
+@import './colors.scss';
+
+.App {
+	background: $background-dark-color;
+	width: 100vw;
+	min-height: 100vh;
+	height: fit-content;
+}
+
+//Loading animation
+.loader-wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: comesIn 1s ease-in-out;
+	transition: 1s all all;
+
+	.loader {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border: 4px solid #fff;
+		animation: loader 2s infinite;
+		display: flex;
+		justify-content: center;
+
+		.loader-inner {
+			display: inline-block;
+			width: 100%;
+			background-color: #fff;
+			animation: loader-inner 1.99s infinite ease-in;
+		}
+	}
+
+	@keyframes loader {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		25% {
+			transform: rotate(180deg);
+		}
+
+		50% {
+			transform: rotate(180deg);
+		}
+
+		75% {
+			transform: rotate(360deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes loader-inner {
+		0% {
+			height: 0%;
+		}
+
+		25% {
+			height: 0%;
+		}
+
+		50% {
+			height: 100%;
+		}
+
+		75% {
+			height: 100%;
+		}
+
+		100% {
+			height: 0%;
+		}
+	}
+
+	@keyframes comesIn {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+
+		0% {
+			opacity: 0;
+		}
+	}
+}

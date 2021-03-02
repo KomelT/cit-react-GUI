@@ -1,0 +1,49 @@
+@import "./colors.scss";
+
+.LogIn{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    width: 350px;
+    height: fit-content;
+    border: 1px solid;
+    padding: 20px;
+    background: $background-bright-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .form-check-label {
+        color: $font-bright-color;
+    }
+
+    .LogInHeading {
+        background: url("../Images/inRust.png") center center;
+        background-size: cover;
+        height: 102px; //*0.51
+        width: 200px;
+        align-self: center;
+        margin-bottom: 10px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+
+        .btn-primary {
+            align-self: flex-end;
+        }
+
+        .alert-danger{
+            align-self: flex-start;
+            max-width: 308px;
+            width: 308px;
+            margin-top:10px ;
+        }
+    }
+}

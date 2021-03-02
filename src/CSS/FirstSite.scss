@@ -1,0 +1,15 @@
+@import "./colors.scss";
+
+.FirstSite{
+	width: 100vw;
+	min-height: 100vh;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+
+	.underNav {
+		width: 100vw;
+		height: fit-content;
+		display: flex;
+	}
+}
