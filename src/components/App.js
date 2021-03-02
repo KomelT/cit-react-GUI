@@ -12,6 +12,7 @@ class App extends React.Component {
 
 		this.isLogged = this.isLogged.bind(this);
 		this.logMeIn = this.logMeIn.bind(this);
+		this.handleWindowClose = this.handleWindowClose.bind(this);
 
 		this.state = {
 			isLoading: true,
@@ -20,6 +21,25 @@ class App extends React.Component {
 			errMessage: '',
 		};
 		this.isLogged();
+	}
+
+	doSomethingBeforeUnload = () => {
+		if (cookies.get("clear") == "true") {
+			cookies.remove("token_id")
+		}
+	}
+
+	// Setup the `beforeunload` event listener
+	setupBeforeUnloadListener = () => {
+		window.addEventListener("beforeunload", (ev) => {
+			ev.preventDefault();
+			return this.doSomethingBeforeUnload();
+		});
+	};
+
+	componentDidMount() {
+		// Activate the event listener
+		this.setupBeforeUnloadListener();
 	}
 
 	async isLogged() {
@@ -111,6 +131,12 @@ class App extends React.Component {
 							var today = new Date();
 							today.setHours(today.getHours() + 1);
 							cookies.set('token_id', data.token_id, { path: '/', expires: today });
+							cookies.set("clear", false);
+						} else {
+							var today = new Date();
+							today.setHours(today.getHours() + 1);
+							cookies.set('token_id', data.token_id, { path: '/', expires: today });
+							cookies.set("clear", true);
 						}
 						this.setState({ isLoading: false, isLogged: true, errMessage: '' });
 					} else {
@@ -156,6 +182,10 @@ class App extends React.Component {
 				);
 			}
 		}
+	}
+
+	handleWindowClose() {
+		alert("Alerted Browser Close");
 	}
 }
 

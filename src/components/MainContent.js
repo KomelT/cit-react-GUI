@@ -161,10 +161,6 @@ class Maincontent extends React.Component {
 								<p className='wcText'>Vsi uporabniki v sistemu</p>
 							</div>
 						</div>
-						<p className='wcTextUpdate'>Podatki so bili nazadnje osveženi 11:58:23</p>
-						<p className='wcTextUpdate2'>
-							<i className='fas fa-sync-alt'></i> Ponovno osveži podatke
-						</p>
 					</div>
 					<p className="smallcalendarHeading">Pregled delavnih ur za tekoč teden:</p>
 					<div className='mcSmallCallendar'>
